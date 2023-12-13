@@ -17,6 +17,7 @@ char *read_buffer(void);
 char **split_arg(char *line);
 int execute(char **argv);
 char *get_path(char *command);
+int hsh_exit(void);
 
 char *_strcat(char *dest, char *src);
 int _strlen(char *s);

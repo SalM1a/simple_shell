@@ -6,7 +6,6 @@
  */
 char **split_arg(char *line)
 {
-
 char *token;
 char **argv;
 int x = 0;
@@ -15,6 +14,7 @@ argv = (char **)malloc(sizeof(char *) * sz);
 if (argv == NULL)
 {
 perror("allcation error\n");
+free(argv);
 exit(EXIT_FAILURE);
 }
 token = strtok(line, " ");
