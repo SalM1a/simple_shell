@@ -11,7 +11,7 @@ int status;
 child_id = fork();
 if (child_id == 0)
 {
-if (execve(argv[0], argv, environ) == -1)
+if (execvp(argv[0], argv) == -1)
 {
 perror(argv[0]);
 exit(1);
