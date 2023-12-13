@@ -31,6 +31,7 @@ int main(void)
 char *line = NULL;
 size_t sz = 0;
 ssize_t r = 0;
+char **argv;
 while (true)
 {
 if (isatty(STDIN_FILENO))
@@ -45,7 +46,14 @@ break;
 }
 }
 line[r] = '\0';
-line = read_buffer();
+argv = split_arg(line);
+if (strcmp(argv[0], "exit") == 0)
+break;
+else if (strcmp(argv[0], "env") == 0)
+_env(environ);
+else
+execute(argv);
+free(argv);
 }
 free(line);
 return (0);
