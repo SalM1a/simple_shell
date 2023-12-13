@@ -46,6 +46,7 @@ break;
 }
 line[r] = '\0';
 }
+line = read_buffer();
 free(line);
 return (0);
 }

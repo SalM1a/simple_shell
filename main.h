@@ -13,7 +13,7 @@
 extern char **environ;
 void _env(char **environ);
 
-char *read_buff(void);
+char *read_buffer(void);
 char **split_arg(char *line);
 int execute(char **argv);
 char *get_path(char *command);
