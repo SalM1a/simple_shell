@@ -14,9 +14,9 @@ extern char **environ;
 void _env(char **environ);
 
 char *read_buff(void);
-char **getusr_input(char *lin, size_t sz);
+char **split_arg(char *line);
 int execute(char **argv);
-char *get_path(const char *command);
+char *get_path(char *command);
 
 char *_strcat(char *dest, char *src);
 int _strlen(char *s);
