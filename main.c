@@ -26,11 +26,12 @@ return (line);
  * main - entry point
  * Return: 0 success
  */
-int main(void)
+int main(int argc, char **argv)
 {
+(void)argc;
 char *line = NULL;
 size_t sz = 0;
-ssize_t r = 0;
+ssize_t r;
 while (true)
 {
 if (isatty(STDIN_FILENO))
@@ -47,6 +48,8 @@ exit(1);
 }
 }
 line[r] = '\0';
+argv = split_arg(line);
+execute(argv);
 free(line);
 }
 return (0);
