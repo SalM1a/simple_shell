@@ -26,9 +26,8 @@ return (line);
  * main - entry point
  * Return: 0 success
  */
-int main(int argc, char **argv)
+int main()
 {
-(void)argc;
 char *line = NULL;
 size_t sz = 0;
 ssize_t r;
@@ -48,8 +47,6 @@ exit(1);
 }
 }
 line[r] = '\0';
-argv = split_arg(line);
-execute(argv);
 free(line);
 }
 return (0);
